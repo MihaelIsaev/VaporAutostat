@@ -263,3 +263,22 @@ extension String {
         }
     }
 }
+
+extension String {
+    public func autostatModel(brand: String) -> String {
+        switch brand.lowercased() {
+        case "kia":
+            switch self.lowercased() {
+            case "ceed": return "Cee'd"
+            case "ceed gt": return "Cee'd GT"
+            default: return self
+            }
+        case "ваз":
+            switch self.lowercased() {
+            case "калина": return "KALINA"
+            default: return self
+            }
+        default: return self
+        }
+    }
+}
