@@ -2,16 +2,20 @@ import Vapor
 import Foundation
 
 public class Autostat: Service {
-    let authURL = "https://auth.autostat.ru"
-    let dataURL = "https://price.autostat.ru"
+    public static var authURL = "https://auth.autostat.ru"
+    public static var dataURL = "https://price.autostat.ru"
+    
     
     public let user, password: String
+    let authURL, dataURL: String
     
     // MARK: Initialization
     
-    public init(user: String, password: String) {
+    public init(user: String, password: String, authURL: String = Autostat.authURL, dataURL: String = Autostat.dataURL) {
         self.user = user
         self.password = password
+        self.authURL = authURL
+        self.dataURL = dataURL
     }
     
     // MARK: Request
